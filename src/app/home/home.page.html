@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item [routerLink]="['/add-student', student.id]" *ngFor="let student of students">
+      <ion-label>
+        <h2>ID: {{ student.id }}</h2>
+        <h2>Name: {{ student.studentName }}</h2>
+        <h2>Age: {{ student.studentAge }}</h2>
+        <h2>Level: {{ student.studentLevel }}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button (click)="navToStudent()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
